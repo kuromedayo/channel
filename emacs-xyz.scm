@@ -154,4 +154,29 @@ different color palettes, such as @samp{frappe}, @samp{macchiato}, or
 @samp{latte}.")
       (license license:expat))))
 
+(define-public emacs-nerd-icons-completion
+  (let ((commit "8e5b995eb2439850ab21ba6062d9e6942c82ab9c")
+        (revision "0"))
+    (package
+      (name "emacs-nerd-icons-completion")
+      (version (git-version "0.0.1" revision commit))
+      (source
+       (origin
+         (method git-fetch)
+         (uri (git-reference
+               (url "https://github.com/rainstormstudio/nerd-icons-completion")
+               (commit commit)))
+         (file-name (git-file-name name version))
+         (sha256
+          (base32 "0nbyrzz5sscycbr1h65ggzrm1m9agfwig2mjg7jljzw8dk1bmmd2"))))
+      (build-system emacs-build-system)
+      (propagated-inputs (list emacs-nerd-icons emacs-compat))
+      (home-page "https://github.com/rainstormstudio/nerd-icons-completion")
+      (synopsis "Use nerd-icons for completion")
+      (description
+       "This package provides functionality to enhance completion interfaces by
+displaying icons from Nerd Fonts. It is inspired by
+@code{all-the-icons-completion} and integrates Nerd Icons into various
+completion frameworks.")
+      (license license:gpl3+))))
 
