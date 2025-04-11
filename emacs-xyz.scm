@@ -122,7 +122,7 @@ navigation.")
     (build-system emacs-build-system)
     (propagated-inputs (list emacs-consult))
     (home-page "https://github.com/minad/affe")
-    (synopsis "Asynchronous fuzzy finder for Emacs using external processes")
+    (synopsis "Asynchronous fuzzy finder for Emacs")
     (description "This package provides Affe, an asynchronous fuzzy finder for
 GNU Emacs written in pure Emacs Lisp.  It spawns an external producer process,
 such as @command{find} or @command{grep}, and filters the output asynchronously.
