@@ -62,7 +62,7 @@ completion frameworks.")
 
 (define-public emacs-smooth-scroll
   (package
-    (name "my-emacs-smooth-scroll")
+    (name "emacs-smooth-scroll")
     (version "1.3")
     (source (origin
               (method git-fetch)
