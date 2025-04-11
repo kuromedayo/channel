@@ -34,6 +34,7 @@
 ;; @samp{latte}.")
 ;;       (license license:expat))))
 
+;;; FSDG problem in issues
 (define-public emacs-nerd-icons-completion
   (let ((commit "8e5b995eb2439850ab21ba6062d9e6942c82ab9c")
         (revision "0"))
@@ -96,11 +97,35 @@ completion frameworks.")
     (build-system emacs-build-system)
     (home-page "https://github.com/jdtsmith/outli")
     (synopsis "Simple and stylish comment-based outliner for Emacs")
-    (description "This package provides @code{outli}, a minimal and elegant
+    (description "This package provides @code{outli-mode}, a minimal and elegant
 outliner for Emacs that enhances @code{outline-minor-mode} with configurable
 heading syntax, styled headings, and org-mode-inspired navigation and structure
-editing. It supports comment-based headers with customizable stems and repeat
+editing.  It supports comment-based headers with customizable stems and repeat
 characters, styled overlines and backgrounds, tab-based visibility toggling,
 org-style speed keys for headline manipulation, and imenu integration for fast
 navigation.")
+    (license license:gpl3+)))
+
+(define-public emacs-affe
+  (package
+    (name "emacs-affe")
+    (version "0.9")
+    (source (origin
+              (method git-fetch)
+              (uri (git-reference
+                    (url "https://github.com/minad/affe")
+                    (commit version)))
+              (file-name (git-file-name name version))
+              (sha256
+               (base32
+                "166v7d120hbk6vczj1iam85xivk6wwpvga8m0vxgcii19issh5b3"))))
+    (build-system emacs-build-system)
+    (propagated-inputs (list emacs-consult))
+    (home-page "https://github.com/minad/affe")
+    (synopsis "Asynchronous fuzzy finder for Emacs using external processes")
+    (description "This package provides Affe, an asynchronous fuzzy finder for
+GNU Emacs written in pure Emacs Lisp.  It spawns an external producer process,
+such as @command{find} or @command{grep}, and filters the output asynchronously.
+The UI remains responsive, and results are shown via the Consult interface.
+Affe is experimental and best suited for small to medium projects.")
     (license license:gpl3+)))
