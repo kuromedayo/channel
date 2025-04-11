@@ -82,7 +82,7 @@ completion frameworks.")
 
 (define-public emacs-outli
   (package
-    (name "my-emacs-outli")
+    (name "emacs-outli")
     (version "0.2.3")
     (source (origin
               (method git-fetch)
