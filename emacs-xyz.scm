@@ -158,7 +158,7 @@ different color palettes, such as @samp{frappe}, @samp{macchiato}, or
   (let ((commit "8e5b995eb2439850ab21ba6062d9e6942c82ab9c")
         (revision "0"))
     (package
-      (name "emacs-nerd-icons-completion")
+      (name "my-emacs-nerd-icons-completion")
       (version (git-version "0.0.1" revision commit))
       (source
        (origin
