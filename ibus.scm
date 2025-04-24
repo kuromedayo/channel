@@ -128,6 +128,7 @@
     (inputs
      (list bash-minimal
            anthy
+           gtk
            gtk+
            ibus
            gobject-introspection
