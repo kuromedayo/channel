@@ -49,9 +49,9 @@
   #:use-module (gnu packages xml)
   #:use-module (srfi srfi-1))
 
-(define-public ibus-anthy
+(define-public my-ibus-anthy
   (package
-    (name "ibus-anthy")
+    (name "my-ibus-anthy")
     (version "1.5.17")
     (source (origin
               (method url-fetch)
