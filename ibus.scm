@@ -47,6 +47,7 @@
   #:use-module (gnu packages xorg)
   #:use-module (gnu packages xdisorg)
   #:use-module (gnu packages xml)
+  #:use-module (gnu packages ibus)
   #:use-module (srfi srfi-1))
 
 (define-public my-ibus-anthy
