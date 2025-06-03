@@ -59,7 +59,7 @@
   #:use-module (gnu packages xorg))
 
 (define-public my-fcitx5-catppuccin-theme
-  (let ((commit "383c27ac46cbb55aa5f58acbd32841c1ed3a78a0")
+  (let ((commit "393845cf3ed0e0000bfe57fe1b9ad75748e2547f")
         (revision "0"))
     (package
       (name "my-fcitx5-catppuccin-theme")
@@ -72,12 +72,17 @@
                (commit commit)))
          (file-name (git-file-name name version))
          (sha256
-          (base32 "07l5d1nlwiq2jhydxckv7a44kic1y8jl93q0jr2i0lmq0zvdzkcz"))))
+          (base32 "0jra594jq3jfn339ly1nxmmv540k7csax0cjg5qwig55xddj9kdj"))))
       (build-system copy-build-system)
       (arguments
        (list
         #:install-plan
-        #~'(("src" "share/fcitx5/themes"))))
+        #~'(("src" "share/fcitx5/themes"))
+        #:phases
+        #~(modify-phases %standard-phases
+                         (add-before 'install 'enable-rounded-borders
+                                     (lambda _
+                                       (invoke "./enable-rounded.sh"))))))
       (home-page "https://github.com/catppuccin/fcitx5")
       (synopsis "Soothing pastel theme for Fcitx5")
       (description
