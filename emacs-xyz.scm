@@ -60,27 +60,3 @@ displaying icons from Nerd Fonts. It is inspired by
 @code{all-the-icons-completion} and integrates Nerd Icons into various
 completion frameworks.")
       (license license:gpl3+))))
-
-(define-public emacs-affe
-  (package
-    (name "emacs-affe")
-    (version "0.9")
-    (source (origin
-              (method git-fetch)
-              (uri (git-reference
-                    (url "https://github.com/minad/affe")
-                    (commit version)))
-              (file-name (git-file-name name version))
-              (sha256
-               (base32
-                "166v7d120hbk6vczj1iam85xivk6wwpvga8m0vxgcii19issh5b3"))))
-    (build-system emacs-build-system)
-    (propagated-inputs (list emacs-consult))
-    (home-page "https://github.com/minad/affe")
-    (synopsis "Asynchronous fuzzy finder for Emacs")
-    (description "This package provides Affe, an asynchronous fuzzy finder for
-GNU Emacs written in pure Emacs Lisp.  It spawns an external producer process,
-such as @command{find} or @command{grep}, and filters the output asynchronously.
-The UI remains responsive, and results are shown via the Consult interface.
-Affe is experimental and best suited for small to medium projects.")
-    (license license:gpl3+)))
