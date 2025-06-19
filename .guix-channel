@@ -1,5 +1,3 @@
 (channel
   (version 0)
-  (directory ".")
-  ;; (url "https://github.com/kuromedayo/channel")
-  )
+  (url "https://github.com/kuromedayo/channel"))
